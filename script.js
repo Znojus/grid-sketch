@@ -1,4 +1,7 @@
 let gridContainer = document.querySelector(".grid-container");
+let resizeBtn = document.querySelector(".resize-btn");
+
+resizeBtn.addEventListener("click", () => resize());
 
 function createGrid(size) {
     for(let i = 0; i < size; i++) {
@@ -23,4 +26,10 @@ function colorize(element) {
     element.style.backgroundColor = "black";
 }
 
-createGrid(60);
+function resize() {
+    let reSize = prompt("Enter the preferred size", 60);
+    gridContainer.innerHTML = "";
+    createGrid(reSize);
+}
+
+createGrid(20);
