@@ -10,6 +10,7 @@ function createGrid(size) {
         for(let j = 0; j < size; j++) {
             let vertDiv = document.createElement("div");
             vertDiv.style.flex = "auto";
+            vertDiv._opacity = 0;
             vertDiv.addEventListener("mouseenter", (event) => colorize(event.target));
             horizDiv.appendChild(vertDiv);
         }
@@ -17,8 +18,9 @@ function createGrid(size) {
 }
 
 function colorize(element) {
+    element._opacity += 0.1;
+    element.style.opacity = element._opacity;
     element.style.backgroundColor = "black";
-    element.style.opacity = "0.33 + 0.11";
 }
 
 createGrid(60);
