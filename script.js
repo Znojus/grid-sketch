@@ -27,9 +27,14 @@ function colorize(element) {
 }
 
 function resize() {
-    let reSize = prompt("Enter the preferred size", 60);
+    let reSize = prompt("Enter the preferred size");
     gridContainer.innerHTML = "";
-    createGrid(reSize);
+    if(reSize > 100) {
+        createGrid(100);
+    }
+    else {
+        createGrid(reSize);
+    }
 }
 
 createGrid(20);
